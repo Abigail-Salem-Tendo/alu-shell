@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty -print0 | awk -v RS='\0' '{n=split($0,a,"/"); print a[n]} END {print ""}'
+find . -empty -printf "%f\n"
