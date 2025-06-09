@@ -1,2 +1,2 @@
 #!/bin/bash
-paste <(echo {a..z}) <(yes {a..z}| head -675) | tr -d '\t'| grep -v ^oo$
+printf '%s\n' {a..z}{a..z} | grep -v ^oo$
