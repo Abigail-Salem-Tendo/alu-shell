@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-#Using the for loop to remove hyphens
+#this script removes the hyphen
 for file in *; do
   if [[ "$file" == *-* ]]; then
-    echo "${file#*-}"
+    echo "$file" | cut -d '-' -f2-
   fi
 done
