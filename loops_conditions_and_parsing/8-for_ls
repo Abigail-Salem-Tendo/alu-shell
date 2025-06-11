@@ -1,0 +1,7 @@
+#!/bin/bash
+#Using the for loop to remove hyphens
+for file in *; do
+  if [[ "$file" == *-* ]]; then
+    echo "${file#*-}"
+  fi
+done
