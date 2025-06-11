@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #Using the for loop to remove hyphens
 for file in *; do
   if [[ "$file" == *-* ]]; then
