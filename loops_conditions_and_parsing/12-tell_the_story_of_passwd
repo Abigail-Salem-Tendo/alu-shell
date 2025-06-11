@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #Using IFS for the fisrst time
-while IFS=':' read -r USERNAME GROUP_ID HOME_DIRECTORY COMMAND USER ID PASSWORD USER ID INFO; do
+while IFS=':' read -r USERNAME GROUP_ID HOME_DIRECTORY COMMAND USER PASSWORD USER; do
 	echo "The user $USERNAME is part of the $GROUP_ID gang, lives in $HOME_DIRECTORY and rides $COMMAND. $USER ID's place is protected by the passcode $PASSWORD, more info about the user here: $USER ID INFO"
 done < /etc/passwd
