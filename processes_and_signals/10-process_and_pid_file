@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#this script has a number of tasks
+#Creating a file that contains its PID
+echo $$ >> /var/run/myscript.pid
+#Displaying the PID
+cat /var/run/myscript.pid
+#When recieving the sigterm signal display:
+trap 'echo "I hate the kill command"; rm -f /var/run/myscript.pid; exit' SIGTERM 
+#remove the file
+trap 'rm -f /var/run/myscript.pid; exit' SIGQUIT
+#when receiving the siginit signal
+trap "echo 'Y U no love me?!'" SIGINT
+#Displaying To infinity and beyond indefinately
+while true; do
+       echo "To infinity and beyond"
+       sleep 2
+done       
