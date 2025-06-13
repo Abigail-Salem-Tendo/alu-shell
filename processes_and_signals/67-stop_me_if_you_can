@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Another way to stop it without using kill
+pkill -f "7-highlander"

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Using the trap command
+trap "echo 'I am invincible!!!'" SIGTERM
+
+#Starting the while loop
+while true;
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
