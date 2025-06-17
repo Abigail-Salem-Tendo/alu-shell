@@ -1,2 +1,2 @@
 #!/bin/bash
-w=$(echo $WATER|tr 'watre' 01234);s=$(echo $STIR|tr 'tir.' 0123);echo $((2#$s + 5#$w)) | awk '{n=$1; b="bestchol"; while(n){r=n%8; x=substr(b,r+1,1) x; n=int(n/8)} print x}'
+read w s<<<"$(echo $WATER $STIR|fold -w1|awk 'BEGIN{b="watre tir."}NR<=length("'"$WATER"'"){n=index(substr(b,1,5),$1)-1;v=v*5+n}NR>length("'"$WATER"'"){n=index(substr(b,7),$1)-1;u=u*4+n}END{print v,u}')";n=$((w+s));b=bestchol;x=;while [ $n -gt 0 ];do r=$((n%8));x=${b:r:1}$x;n=$((n/8));done;[ -z "$x" ]&&x=${b:0:1};echo $x
