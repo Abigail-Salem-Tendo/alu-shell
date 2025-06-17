@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Printing pids and names
+
+for pid in /proc/*; do
+    if [[ -f "$pid/comm" ]]; then
+        name=$(cat "$pid/comm")
+        if [[ "$name" == "bash" ]]; then
+            echo "${pid##*/} $name"
+        fi
+    fi
+done
+
