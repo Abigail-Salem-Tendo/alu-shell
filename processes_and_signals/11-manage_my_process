@@ -25,8 +25,8 @@ stop() {
 
 #Creating the restart function to restart the process
 restart() {
-	start
-	stop
+	stop >/dev/null
+	start >/dev/null
 	echo "manage_my_process restarted"
 }
 
@@ -41,7 +41,7 @@ case "$1" in
 		restart
 		;;
 	*)
-		echo "Use: manage_my_process {start|stop|restart}"
+		echo "Usage: manage_my_process {start|stop|restart}"
 		exit 1
 		;;
 esac
